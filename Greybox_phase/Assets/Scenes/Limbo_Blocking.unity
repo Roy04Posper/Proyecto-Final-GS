@@ -3271,6 +3271,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 642466815}
+  - {fileID: 1915671647}
+  - {fileID: 1304062175}
   - {fileID: 2009092255}
   - {fileID: 1797410090}
   m_Father: {fileID: 0}
@@ -13633,6 +13635,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1304062174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1304062175}
+  m_Layer: 3
+  m_Name: waypoint1 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1304062175
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304062174}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -211.7, y: -75.19171, z: 4.1836843}
+  m_LocalScale: {x: 52.753174, y: 17.37656, z: 6.809282}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 352561396}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1306735036
 GameObject:
   m_ObjectHideFlags: 0
@@ -18182,7 +18215,7 @@ GameObject:
   - component: {fileID: 1797410092}
   - component: {fileID: 1797410091}
   m_Layer: 6
-  m_Name: Test1_movigplatform (1)
+  m_Name: Test1_onewayplatform
   m_TagString: OneWayPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18905,6 +18938,37 @@ Transform:
   - {fileID: 619394802}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1915671646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1915671647}
+  m_Layer: 3
+  m_Name: waypoint1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1915671647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915671646}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -211.69995, y: 67.81732, z: 4.1836843}
+  m_LocalScale: {x: 52.753174, y: 17.37656, z: 6.809282}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 352561396}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1918274244
 GameObject:
   m_ObjectHideFlags: 0
@@ -19408,6 +19472,7 @@ GameObject:
   - component: {fileID: 2009092258}
   - component: {fileID: 2009092257}
   - component: {fileID: 2009092256}
+  - component: {fileID: 2009092259}
   m_Layer: 3
   m_Name: Test1_movigplatform
   m_TagString: Untagged
@@ -19424,7 +19489,7 @@ Transform:
   m_GameObject: {fileID: 2009092254}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -211.7, y: -40.02368, z: 4.1836843}
+  m_LocalPosition: {x: -211.7, y: -14.2, z: 4.1836843}
   m_LocalScale: {x: 52.753174, y: 17.37656, z: 6.809282}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19558,6 +19623,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2009092259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009092254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41476b30eed9231408500e519da07955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidad: 30
+  waypoints:
+  - {fileID: 1915671647}
+  - {fileID: 1304062175}
 --- !u!1 &2010259451
 GameObject:
   m_ObjectHideFlags: 0
