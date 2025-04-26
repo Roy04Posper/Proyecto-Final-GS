@@ -6,16 +6,19 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public enum GameState { playing, pause, win, lose };
-    public static GameState gameState;
+    public static GameManager Instance { get; set; }
+    public PlayerMovement Player { get; set; }
+    public SaveSystem PlayerSaveData { get; set; }
+    public SavePointController SavePointController { get; set; }
+
 
     [SerializeField] private Button pauseButton;
     [SerializeField] private GameObject pauseMenu;
     private bool isGamePaused = false;
 
-    private void Start()
+    private void Start() 
     {
-        gameState = GameState.playing;
+
     }
 
     private void Update()
@@ -25,13 +28,14 @@ public class GameManager : MonoBehaviour
             if (isGamePaused) { ResumeGame(); }
             else { PauseGame(); }
         }
+
     }
 
     public void PauseGame()
     {
         if (isGamePaused) return;
         Time.timeScale = 0f;
-        GameManager.gameState = GameState.pause;
+
         isGamePaused = true;
         Debug.Log("Game paused");
 
@@ -41,7 +45,7 @@ public class GameManager : MonoBehaviour
 
     public void ResumeGame()
     {
-        GameManager.gameState = GameState.playing;
+
         if (!isGamePaused) return;
         Time.timeScale = 1f;
         isGamePaused = false;
@@ -53,7 +57,7 @@ public class GameManager : MonoBehaviour
 
     public void reStartGame()
     {
-        GameManager.gameState = GameState.playing;
+
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
@@ -73,5 +77,13 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Scene Changed");
         SceneManager.LoadScene(nombre);
+    }
+    public void Save() 
+    {
+        SaveSystem.Save();
+    }
+    public void Load()
+    {
+        SaveSystem.Load();
     }
 }

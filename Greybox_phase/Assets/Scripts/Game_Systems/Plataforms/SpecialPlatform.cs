@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class SpecialPlatfrom : MonoBehaviour
 {
+
     private GameObject currentOneWayPlatform;
 
     [SerializeField] private BoxCollider2D playerCollider;

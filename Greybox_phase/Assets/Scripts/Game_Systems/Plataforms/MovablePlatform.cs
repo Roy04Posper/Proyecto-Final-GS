@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MovablePlatform : MonoBehaviour
 {
+    public static MovablePlatform Instance;
     [Header("Configuración")]
     public float velocidad = 2f;
 
