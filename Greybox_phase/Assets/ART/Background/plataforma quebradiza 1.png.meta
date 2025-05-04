@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 47af524a14b3df24cb70ba1606e51c4a
+guid: 8bb4f19f35b787b43992040aa256827d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5594073076843089646
-    second: groundPrincipalLayer_0
+      213: 3408367798279334580
+    second: plataforma quebradiza 1_0
+  - first:
+      213: 9030364145528641048
+    second: plataforma quebradiza 1_1
+  - first:
+      213: 5682706302759432164
+    second: plataforma quebradiza 1_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: groundPrincipalLayer_0
+      name: plataforma quebradiza 1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 3840
-        height: 598
+        x: 762
+        y: 858
+        width: 15
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +134,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eee0fc023d322ad40800000000000000
-      internalID: 5594073076843089646
+      spriteID: 4bae1584474fc4f20800000000000000
+      internalID: 3408367798279334580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plataforma quebradiza 1_1
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 776
+        width: 33
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81698ae685c425d70800000000000000
+      internalID: 9030364145528641048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plataforma quebradiza 1_2
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 409
+        width: 938
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ef69da26470dde40800000000000000
+      internalID: 5682706302759432164
       vertices: []
       indices: 
       edges: []
@@ -148,7 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      groundPrincipalLayer_0: 5594073076843089646
+      plataforma quebradiza 1_0: 3408367798279334580
+      plataforma quebradiza 1_1: 9030364145528641048
+      plataforma quebradiza 1_2: 5682706302759432164
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

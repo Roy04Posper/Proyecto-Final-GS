@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 47af524a14b3df24cb70ba1606e51c4a
+guid: 5997f0d59c2e16346a2eb549620cb87d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5594073076843089646
-    second: groundPrincipalLayer_0
+      213: -6646889707459811598
+    second: bloque2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: groundPrincipalLayer_0
+      name: bloque2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 3840
-        height: 598
+        x: 200
+        y: 148
+        width: 758
+        height: 815
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eee0fc023d322ad40800000000000000
-      internalID: 5594073076843089646
+      spriteID: 2f668ad170181c3a0800000000000000
+      internalID: -6646889707459811598
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      groundPrincipalLayer_0: 5594073076843089646
+      bloque2_0: -6646889707459811598
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

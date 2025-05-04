@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 47af524a14b3df24cb70ba1606e51c4a
+guid: e797d74f69b049b43a6c41660f1a73e4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5594073076843089646
-    second: groundPrincipalLayer_0
+      213: -5131150984215453141
+    second: mascara_Textura_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: groundPrincipalLayer_0
+      name: mascara_Textura_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 3840
-        height: 598
+        width: 2048
+        height: 2048
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eee0fc023d322ad40800000000000000
-      internalID: 5594073076843089646
+      spriteID: b2221f8ad5d7ac8b0800000000000000
+      internalID: -5131150984215453141
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      groundPrincipalLayer_0: 5594073076843089646
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

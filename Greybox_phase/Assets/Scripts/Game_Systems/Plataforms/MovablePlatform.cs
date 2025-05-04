@@ -1,16 +1,18 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class MovablePlatform : MonoBehaviour
 {
     public static MovablePlatform Instance;
-    [Header("Configuración")]
+    [Header("ConfiguraciÃ³n")]
     public float velocidad = 2f;
 
-    [Tooltip("Puntos de destino (GameObjects vacíos)")]
+    [Tooltip("Puntos de destino (GameObjects vacÃ­os)")]
     public Transform[] waypoints;
 
+
+
     private int indiceActual = 0;
-    private int direccion = 1; // 1 para adelante, -1 para atrás
+    private int direccion = 1; // 1 para adelante, -1 para atrÃ¡s
 
     void Update()
     {
@@ -21,12 +23,12 @@ public class MovablePlatform : MonoBehaviour
         // Mover la plataforma hacia el waypoint actual
         transform.position = Vector3.MoveTowards(transform.position, destino.position, velocidad * Time.deltaTime);
 
-        // Si llega al waypoint, cambiar al siguiente según la dirección
+        // Si llega al waypoint, cambiar al siguiente segÃºn la direcciÃ³n
         if (Vector3.Distance(transform.position, destino.position) < 0.01f)
         {
             indiceActual += direccion;
 
-            // Cambiar de dirección si llegamos al final o al inicio
+            // Cambiar de direcciÃ³n si llegamos al final o al inicio
             if (indiceActual >= waypoints.Length)
             {
                 indiceActual = waypoints.Length - 2;
@@ -37,6 +39,24 @@ public class MovablePlatform : MonoBehaviour
                 indiceActual = 1;
                 direccion = 1;
             }
+        }
+    }
+
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.transform.parent = transform;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player")) 
+        {
+            collision.gameObject.transform.parent = null;
         }
     }
 
