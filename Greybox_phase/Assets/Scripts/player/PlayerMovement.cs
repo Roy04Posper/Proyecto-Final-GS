@@ -77,9 +77,11 @@ public class PlayerMovement : MonoBehaviour
         if (!isGrounded)
         {
             timeSinceLastGrounded += Time.deltaTime;
+            Debug.Log("Player en el suelo");
         }
         else
         {
+            Debug.Log("Player no en el suelo");
             timeSinceLastGrounded = 0f;
         }   
     }
@@ -106,6 +108,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
+            Debug.Log("Pulsado boton salto");
             bool canJump = timeSinceLastGrounded < coyoteTimeThreshold || isGrounded || jumpCount > 0;
 
             if (canJump)
@@ -113,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
                 float jumpForce = Mathf.Sqrt(jumpPower * -2 * (Physics2D.gravity.y * rb.gravityScale));
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce * speedJumpMultiplier);
                 rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-
+                Debug.Log("Salto realizado");
                 isJumping = true;
                 jumpCancelled = false;
                 jumpTimer = 0f;
@@ -169,6 +172,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time > lastDashTime + dashCooldown)
         {
             StartCoroutine(Dash());
+            Debug.Log("Pulsado boton de dash");
         }
     }
 
@@ -177,6 +181,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftControl) && isGrounded && Time.time > lastSlideTime + slideCooldown)
         {
             StartCoroutine(Slide());
+            Debug.Log("Pulsado boton de slide");
         }
     }
 
@@ -190,7 +195,7 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = new Vector2(lastDirectionX * dashSpeed * moveSpeed, 0);
 
         yield return new WaitForSeconds(dashDuration);
-
+        Debug.Log("dash hecho");
         rb.gravityScale = originalGravity;
         isDashing = false;
     }
@@ -211,6 +216,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         isSliding = false;
+        Debug.Log("slide hecho");
     }
     public void Save(ref PlayerSaveData data)
     {

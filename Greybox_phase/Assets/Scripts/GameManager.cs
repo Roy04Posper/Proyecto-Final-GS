@@ -12,8 +12,8 @@ public class GameManager : MonoBehaviour
     public SavePointController SavePointController { get; set; }
 
 
-    [SerializeField] private Button pauseButton;
-    [SerializeField] private GameObject pauseMenu;
+     private Button pauseButton;
+     private GameObject pauseMenu;
     private bool isGamePaused = false;
 
     private void Start() 
