@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
 
         CheckGrounded();
         Jump();
-        DashInput();
+
         SlideInput();
 
         if (!isGrounded)
@@ -131,11 +131,16 @@ public class PlayerMovement : MonoBehaviour
                     }
                 }
             }
+<<<<<<< Updated upstream:Greybox_phase/Assets/Scripts/player/PlayerMovement.cs
+=======
+
+>>>>>>> Stashed changes:OrangePhase/Assets/Scripts/player/PlayerMovement.cs
         }
 
         if (isJumping)
         {
             jumpTimer += Time.deltaTime;
+            m_Animator.SetBool("isJumping", true);
 
             if (Input.GetButtonUp("Jump"))
             {
@@ -146,6 +151,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 isJumping = false;
             }
+        }
+        else if (isGrounded)
+        {
+            m_Animator.SetBool("isJumping", false);
+            m_Animator.SetBool("isGrounded", true);
         }
     }
 
@@ -164,6 +174,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+<<<<<<< Updated upstream:Greybox_phase/Assets/Scripts/player/PlayerMovement.cs
     private void DashInput()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time > lastDashTime + dashCooldown)
@@ -171,6 +182,9 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(Dash());
         }
     }
+=======
+
+>>>>>>> Stashed changes:OrangePhase/Assets/Scripts/player/PlayerMovement.cs
 
     private void SlideInput()
     {
