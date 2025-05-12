@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      texturafarola_0: 8637004781192778667
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpButtonTime = 0.25f;
     public float coyoteTime;
     public float coyoteTimeThreshold = 0.2f;
-    public int maxJumps = 2;
+    public int maxJumps;
     public float fallMultiplier = 2.5f;
     public float speedJumpMultiplier;
 
@@ -49,9 +49,10 @@ public class PlayerMovement : MonoBehaviour
     public float slideSpeed = 8f;
     public float slideDuration = 0.5f;
     public float slideCooldown = 1.5f;
+    public Collider2D collSlide;
 
     private Rigidbody2D rb;
-    private Collider2D coll;
+    public Collider2D coll;
     private Vector2 input;
     private int jumpCount;
     private bool isGrounded;
@@ -88,12 +89,16 @@ public class PlayerMovement : MonoBehaviour
         InputsHandler();
         FlipDirection();
         Jump();
-        DashInput();
         SlideInput();
 
         if (!isGrounded)
         {
             timeSinceLastGrounded += Time.deltaTime;
+            if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time > lastDashTime + dashCooldown)
+            {
+                StartCoroutine(Dash());
+                Debug.Log("Pulsado boton de dash");
+            }
 
         }
         else
@@ -140,9 +145,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
+            m_Animator.SetBool("isJumping", true);
             Debug.Log("Pulsado boton salto");
             bool canJump = timeSinceLastGrounded < coyoteTimeThreshold || isGrounded || jumpCount > 0;
-            m_Animator.SetBool("isJumping", true);
             if (canJump)
             {
                 float jumpForce = Mathf.Sqrt(jumpPower * -2 * (Physics2D.gravity.y * rb.gravityScale));
@@ -167,6 +172,8 @@ public class PlayerMovement : MonoBehaviour
                         jumpCount--;
                     }
                 }
+
+
             }
 
         }
@@ -201,18 +208,9 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded)
         {
 
-            jumpCount = maxJumps - 1;
+            jumpCount = maxJumps;
             lastTimeOnGrounded = Time.time;
             coyoteTimeThreshold = 0;
-        }
-    }
-
-    private void DashInput()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time > lastDashTime + dashCooldown)
-        {
-            StartCoroutine(Dash());
-            Debug.Log("Pulsado boton de dash");
         }
     }
 
@@ -225,15 +223,18 @@ public class PlayerMovement : MonoBehaviour
             if (input.x != 0)
             {
                 m_Animator.SetBool("isSliding", true);
+                coll.enabled = false;
+                collSlide.enabled = true;
+                Debug.Log("Collider normal deactivado y slide collider activado");
             }
 
         }
         else
         {
             m_Animator.SetBool("isSliding", false);
+
         }
     }
-
     private System.Collections.IEnumerator Dash()
     {
         isDashing = true;
@@ -259,10 +260,17 @@ public class PlayerMovement : MonoBehaviour
         float timer = 0f;
         while (timer < slideDuration)
         {
+
             rb.linearVelocity = new Vector2(direction * slideSpeed, rb.linearVelocity.y);
             timer += Time.deltaTime;
             yield return null;
         }
+
+
+        yield return new WaitForSeconds(slideDuration);
+        coll.enabled = true;
+        collSlide.enabled = false;
+        Debug.Log("Collider normal activado y slide collider desactivado");
 
         isSliding = false;
         Debug.Log("slide hecho");

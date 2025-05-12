@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      edificioObstaculo_Textura_0: -8766918457769360982
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
