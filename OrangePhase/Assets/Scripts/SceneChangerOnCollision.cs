@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.InputSystem.Controls;
 using UnityEngine.SceneManagement;
 
 public class SceneChangerOnCollision : MonoBehaviour
 {
     [Header("Nombre de la escena a cargar")]
     public string nombreDeEscena;
+    public GameObject video;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -12,7 +14,7 @@ public class SceneChangerOnCollision : MonoBehaviour
         {
             if (!string.IsNullOrEmpty(nombreDeEscena))
             {
-                SceneManager.LoadScene(nombreDeEscena);
+                video.SetActive(false);
             }
             else
             {
@@ -20,5 +22,6 @@ public class SceneChangerOnCollision : MonoBehaviour
             }
         }
     }
+
 }
 
