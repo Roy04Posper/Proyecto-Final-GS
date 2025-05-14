@@ -6,14 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Limbo.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
     path: Assets/Scenes/StartMenu_Game.unity
     guid: b1b440bff32a62045beebca804027fd2
   - enabled: 1
     path: Assets/Scenes/Intro.unity
     guid: cc210e949765fdd4c8cf6b03fd721e70
+  - enabled: 1
+    path: Assets/Scenes/Limbo.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Controles.unity
+    guid: 3fdbe2f4b71f00a4d83a73b241cb4803
+  - enabled: 1
+    path: Assets/Scenes/Final.unity
+    guid: 2ad2113871500804ca41fe22b3013c22
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: d58f69053ab10044193d12ccfa021f55, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
